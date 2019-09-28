@@ -1,15 +1,23 @@
+import processing.sound.*;
+SoundFile file;
+
 int[] arrbro = new int[10];
 //Triangle[] triangles = new Triangle[10];
 ArrayList <Triangle> triangles = new ArrayList <Triangle>();
 int f = 0;
 int j = 0;
-int objectsInScreenAtOneGivenMoment = 4;
-int numberOfShapes = 7;
+int freq = 9;
+int numberOfShapes = 9;
 int speed = 1;
+float hm = 0;
 
 //Setup
 void setup(){
-  size(500,500);
+  // Load a soundfile from the /data folder of the sketch and play it back
+  file = new SoundFile(this, "sample.mp3");
+  file.play();
+  
+  size(600,600);
   background(31);
   noStroke();
   colorMode(HSB, 100);
@@ -20,13 +28,14 @@ void setup(){
 }
 
 void draw(){
-  background(31);
+  
+  background(noise(hm+=0.001)*100, 80, 100, 80);
   translate(width/2, height/2);
 
 //Every certain amount of frames add a new shape to be drawn
   if(frameCount>=f){
     j++;
-    f+=width+100;
+    f+=width/freq;
     if(j>=numberOfShapes+1){
       j=numberOfShapes;
     }
