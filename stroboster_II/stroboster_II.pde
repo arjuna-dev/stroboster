@@ -1,30 +1,32 @@
 import processing.sound.*;
 SoundFile file;
 
-int[] arrbro = new int[10];
-//Triangle[] triangles = new Triangle[10];
 ArrayList <Triangle> triangles = new ArrayList <Triangle>();
 int f = 0;
 int j = 0;
-int freq = 9;
-int numberOfShapes = 9;
+int freq = 4;
 int speed = 1;
 float hm = 0;
+int minFreq=20;
+int maxFreq=30;
+float y = 0;
 
 //Setup
 void setup(){
+ 
   // Load a soundfile from the /data folder of the sketch and play it back
   file = new SoundFile(this, "sample.mp3");
   file.play();
   
+  //normal stuff
   size(600,600);
   background(31);
   noStroke();
   colorMode(HSB, 100);
-//Instantiate triangle objects and store them in the ArrayList
-  for(int i=0; i<numberOfShapes; i++){
-    triangles.add(new Triangle(speed));
-  }
+  
+  println(sin(180));
+  println(sin(180));
+  println(sin(180));
 }
 
 void draw(){
@@ -34,14 +36,15 @@ void draw(){
 
 //Every certain amount of frames add a new shape to be drawn
   if(frameCount>=f){
-    j++;
-    f+=width/freq;
-    if(j>=numberOfShapes+1){
-      j=numberOfShapes;
-    }
+    triangles.add(new Triangle(speed));
+    f+=int(map(cos(y),cos(180),cos(0), 1000/minFreq, 1000/maxFreq));
+    y++;
+    println(f);
   }
   
-  for(int k=0;k<j;k++){
+  
+  
+  for(int k=0;k<triangles.size();k++){
     triangles.get(k).create();
     triangles.get(k).move();
     triangles.get(k).colorize();
@@ -53,7 +56,6 @@ void draw(){
   for(int i=0; i<triangles.size()-1;i++){
     if(triangles.get(i).x>width/2+100){
       triangles.remove(i);
-      triangles.add(new Triangle(speed));
     }
   }
 }

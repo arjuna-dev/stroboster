@@ -1,6 +1,8 @@
 class Triangle{
   
-  float x;
+Shape sh;
+  
+  int x;
   float noisecalator;
   float noiseval;
   float figNumber;
@@ -8,6 +10,7 @@ class Triangle{
   float squeak;
   float numberOfFigs;
   float rndmy;
+  //void[] shapes = {new Shape(), 150, 30 }; 
   
   Triangle(float speedInput){
     x = 0;
@@ -17,7 +20,7 @@ class Triangle{
     speed = speedInput;
     squeak = random(1000);
     numberOfFigs  = random(6, 21);
-    rndmy = int(random(2));
+    rndmy = int(random(3));
   }
   
   void create(){
@@ -25,15 +28,21 @@ class Triangle{
     for (float c=-TWO_PI; c<TWO_PI; c+=TWO_PI/numberOfFigs) {
       pushMatrix();
       rotate(c+squeak);
-      if (rndmy==0.0){
-      triangle(x, 0, 50+x, -50, 50+x, 50);
+      
+      if (rndmy==0){
+        sh = new Shape(x);
+        sh.makeCircle();
+      } else if (rndmy==1) {
+        sh = new Shape(x);
+        sh.makeTriangle();
       } else {
-      circle(x, x, 50);
+        sh = new Shape(x);
+        sh.makeInvertedTriangle();
       }
       popMatrix();
       }
   }
-  
+ 
   void move(){
     x+=speed;
   }
