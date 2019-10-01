@@ -81,7 +81,7 @@ void draw() {
   //  rect(h*barSize, height-spectrum[h]*300,h*barSize+barSize, height);
   //}
   
-    //Frequency visualizer mic
+  //Frequency visualizer mic
   //translate(-width/2, -height/2);
   //int selectedBands = bands/1; 
   //int barSize = width/selectedBands;

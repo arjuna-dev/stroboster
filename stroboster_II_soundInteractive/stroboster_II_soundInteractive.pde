@@ -63,4 +63,21 @@ void draw() {
     }
   }
   
+  //Frequency visualizer sample
+  //translate(-width/2, -height/2);
+  //int selectedBands = bands/20; 
+  //int barSize = width/selectedBands;
+  //for (int h=0; h<selectedBands; h++) {
+  //  fill(31);
+  //  rect(h*barSize, height-spectrum[h]*300,h*barSize+barSize, height);
+  //}
+  
+  //Frequency visualizer mic
+  //translate(-width/2, -height/2);
+  //int selectedBands = bands/1; 
+  //int barSize = width/selectedBands;
+  //for (int h=0; h<selectedBands; h++) {
+  //  fill(31,31,31,81);
+  //  rect(h*barSize, height-theMic.left.get(h)*300,h*barSize+barSize, height);
+  //}
 }

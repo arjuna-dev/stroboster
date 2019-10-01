@@ -35,20 +35,33 @@ void draw(){
     println(f);
   }
   
-  
-  
   for(int k=0;k<triangles.size();k++){
     triangles.get(k).create();
     triangles.get(k).move();
     triangles.get(k).colorize();
   }
   
-  
 //Delete old objects (out of bounds) and create new ones
-//AKA RESPAWN
   for(int i=0; i<triangles.size()-1;i++){
     if(triangles.get(i).x>width/2+100){
       triangles.remove(i);
     }
   }
+  //Frequency visualizer sample
+  //translate(-width/2, -height/2);
+  //int selectedBands = bands/20; 
+  //int barSize = width/selectedBands;
+  //for (int h=0; h<selectedBands; h++) {
+  //  fill(31);
+  //  rect(h*barSize, height-spectrum[h]*300,h*barSize+barSize, height);
+  //}
+  
+  //Frequency visualizer mic
+  //translate(-width/2, -height/2);
+  //int selectedBands = bands/1; 
+  //int barSize = width/selectedBands;
+  //for (int h=0; h<selectedBands; h++) {
+  //  fill(31,31,31,81);
+  //  rect(h*barSize, height-theMic.left.get(h)*300,h*barSize+barSize, height);
+  //}
 }
