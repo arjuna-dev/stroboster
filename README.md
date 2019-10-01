@@ -2,14 +2,14 @@
 #### A Processing project.
 
 
+###### I
+
+In the first program (**stroboster_I**) the audio works independently from the graphics.
+
 ###### II
 
-In the first program (**stroboster_II**) the audio works independently from the graphics.
+In **stroboster_II** the graphics only come when the OM/AUM sound is being chanted in the sample file.
 
 ###### III
 
-In **stroboster_III** the graphics only come when the OM/AUM sound is being chanted in the sample file.
-
-###### IV
-
-In **stroboster_IV** the graphics only come when the OM/AUM sound is being chanted by the user into the microphone.
+In **stroboster_III** the graphics only come when the OM/AUM sound is being chanted by the user into the microphone.
