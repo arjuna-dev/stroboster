@@ -21,6 +21,10 @@ float newVal = 0;
 
 //Setup
 void setup() {
+  size(600, 600);
+  background(31);
+  noStroke();
+  colorMode(HSB, 100);
 
   // Load a soundfile from the /data folder of the sketch and play it back
   file = new SoundFile(this, "sample.mp3");
@@ -33,14 +37,6 @@ void setup() {
   //Give input
   fft.input(file);
 
-  size(600, 600);
-  background(31);
-  noStroke();
-  colorMode(HSB, 100);
-  //Instantiate triangle objects and store them in the ArrayList
-  //for (int i=0; i<numberOfShapes; i++) {
-  //  triangles.add(new Triangle(speed));
-  //}
 }
 
 void draw() {

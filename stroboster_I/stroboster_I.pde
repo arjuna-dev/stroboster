@@ -13,20 +13,13 @@ float y = 0;
 
 //Setup
 void setup(){
- 
-  // Load a soundfile from the /data folder of the sketch and play it back
-  file = new SoundFile(this, "sample.mp3");
-  file.play();
-  
-  //normal stuff
   size(600,600);
   background(31);
   noStroke();
   colorMode(HSB, 100);
-  
-  println(sin(180));
-  println(sin(180));
-  println(sin(180));
+  // Load a soundfile from the /data folder of the sketch and play it back
+  file = new SoundFile(this, "sample.mp3");
+  file.play();
 }
 
 void draw(){

@@ -25,6 +25,10 @@ float newVal = 0;
 
 //Setup
 void setup() {
+  size(600, 600);
+  background(31);
+  noStroke();
+  colorMode(HSB, 100);
 
   // Load a soundfile from the /data folder of the sketch and play it back
   file = new SoundFile(this, "sample.mp3");
@@ -45,11 +49,6 @@ void setup() {
 
   // get a line in from Minim, default bit depth is 16
   theMic = minim.getLineIn(Minim.STEREO, 512);
-
-  size(600, 600);
-  background(31);
-  noStroke();
-  colorMode(HSB, 100);
 }
 
 void draw() {
